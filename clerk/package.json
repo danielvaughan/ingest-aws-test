@@ -1,5 +1,5 @@
 {
-  "name": "metadata-receiver",
+  "name": "clerk",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -9,8 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uuid": "^3.1.0",
-    "aws-sdk": "latest",
-    "aws-xray-sdk" : "latest"
+    "aws-sdk": "^2.105.0"
   }
 }
