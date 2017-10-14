@@ -1,0 +1,7 @@
+# Services must include this file as follows:
+# ```
+# custom:
+#   hcaIngest: ${file(../hcaIngest.yml)}}
+# ```
+# Top Level Project
+name: hca-ingest
