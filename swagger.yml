@@ -14,7 +14,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /dev/metadata:
+  /dev/submission/{id}/metadata:
     post:
       description: Upload metadata
       responses:
@@ -23,6 +23,11 @@ paths:
         default:
           description: "unexpected error"
       parameters:
+        - name: id
+          in: path
+          description: ID of submission
+          required: true
+          type: string
         - in: body
           name: metadata
           description: metadata
