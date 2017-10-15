@@ -1,0 +1,30 @@
+swagger: '2.0'
+info:
+  title: Test AWS Ingest
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.1.0
+host:
+  zihsgtfn23.execute-api.eu-west-2.amazonaws.com
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /dev/metadata:
+    post:
+      description: Upload metadata
+      responses:
+        '201':
+          description: upload metadata
+        default:
+          description: "unexpected error"
+      parameters:
+        - in: body
+          name: metadata
+          description: metadata
+          schema:
+            type: string
