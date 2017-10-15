@@ -14,12 +14,20 @@ consumes:
 produces:
   - application/json
 paths:
-  /dev/submission/{id}/metadata:
+  /dev/submissions:
+    post:
+      description: Create submission
+      responses:
+        '201':
+          description: created submission
+        default:
+          description: "unexpected error"
+  /dev/submissions/{id}/metadata:
     post:
       description: Upload metadata
       responses:
         '201':
-          description: upload metadata
+          description: uploaded metadata
         default:
           description: "unexpected error"
       parameters:

@@ -36,7 +36,7 @@ functions:
             - ${self:custom.events.metadata-received}
     events:
       - http:
-          path: submission/{id}/metadata
+          path: submissions/{id}/metadata
           method: post
           cors: true
           request:

@@ -46,6 +46,19 @@ functions:
                 - "-"
                 - ${self:custom.events.metadata-received}
           topicName: ${self:custom.hcaIngest.name}-${self:custom.events.metadata-received}
+      - sns:
+          arn:
+            Fn::Join:
+              - ""
+              - - "arn:aws:sns:"
+                - Ref: "AWS::Region"
+                - ":"
+                - Ref: "AWS::AccountId"
+                - ":"
+                - ${self:custom.hcaIngest.name}
+                - "-"
+                - ${self:custom.events.submission-created}
+          topicName: ${self:custom.hcaIngest.name}-${self:custom.events.submission-created}
     environment:
       LEDGER_TABLE: ${self:custom.hcaIngest.name}-${self:custom.tables.ledger}
 
