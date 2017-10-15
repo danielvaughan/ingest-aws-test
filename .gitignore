@@ -52,3 +52,4 @@ fabric.properties
 /hca-ingest-aws.iml
 /test/
 /private.yml
+/ui/node_modules/

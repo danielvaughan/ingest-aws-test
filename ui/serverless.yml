@@ -1,0 +1,29 @@
+service: ${self:custom.hcaIngest.name}-ui
+
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+plugins:
+  - serverless-finch
+
+custom:
+  hcaIngest: ${file(../hcaIngest.yml)}
+  private: ${file(../private.yml)}
+  client:
+    bucketName: ${self:custom.hcaIngest.name}-ui-files
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: ${self:custom.private.region}
+
+functions:
+  auth:
+    handler: handler.auth
+    events:
+      - http: GET iot/keys
+    memorySize: 128
+    timeout: 10
+
+package:
+  exclude:
+    - client/**

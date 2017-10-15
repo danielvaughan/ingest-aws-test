@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uuid": "^3.1.0",
     "aws-sdk": "latest",
-    "aws-xray-sdk" : "latest"
+    "aws-xray-sdk": "latest",
+    "uuid": "^3.1.0"
   }
 }
